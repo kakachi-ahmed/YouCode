@@ -1,3 +1,2 @@
 # YouCode
-## this is youcode sas 
-"WELCOME AND HI"
+## Mon premier README
