@@ -1,16 +1,6 @@
 #include <stdio.h>
 
-<<<<<<< HEAD
-int main(){
 
-     int n , m
-
-
-
-
-
-}
-=======
 int main() {
     int n, m;
     printf("Entrez deux entiers : ");
@@ -34,4 +24,3 @@ int main() {
 
     return 0;
 }
->>>>>>> refs/remotes/origin/main
