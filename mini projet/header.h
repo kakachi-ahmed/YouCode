@@ -8,3 +8,6 @@ void cherche_davion();
 void tbdil(int i,int j);
 void trier_avions();
 void swi_tch();
+
+
+//fgets(tab,23,stdin)

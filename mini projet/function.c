@@ -8,7 +8,10 @@ void ajouter_davion(){
      scanf("%d",&add);
    for(int i = 0 ; i < add  ; i++){
  printf("enter modele davion : ");
-    scanf("%s",modele[total]);
+ while (getchar() != '\n');
+fgets(modele[i],50,stdin);
+   
+    //scanf("%s",modele[total]);
  printf("enter capacite davion : ");
     scanf("%d",&capacite[total]); 
  printf("enter statut davion : ");
@@ -23,7 +26,7 @@ void afficher_davion(){
 
         for(int i = 0; i<total; i++){
       
-      printf("|- idAvion : %d | -modele : %s | -capacite : %d | -statut : %s |\n",idAavion[i],modele[i],capacite[i],statut[i]);
+      printf("-idAvion : %d|-modele : %s|-capacite : %d|-statut : %s \n",idAavion[i],modele[i],capacite[i],statut[i]);
 }}
 
 void cherche_davion(){
@@ -112,39 +115,36 @@ void Modifier_davion(){
                
     } 
 
-void tbdil(int i,int j){
-
-   idswap=idAavion[i];
-    idAavion[i]=idAavion[j];
-      idAavion[j]=idswap;
-        capswap=capacite[i];
-         capacite[i]=capacite[j];
-          capacite[j]=capswap;
-         strcpy(mdlswap,modele[i]);
-            strcpy(modele[i], modele[j]);
-           strcpy(modele[j],mdlswap);
-      strcpy(sttswap, statut[i]);
-         strcpy(statut[i], statut[j]);
-            strcpy(statut[j],sttswap);
-}
 
 void trier_avions(){
        printf("Trier par : \n 1-capacite 2-modele: ");
           scanf("%d", &swpchoix);
-              for(int i = 0; i<total - 1;i++) {
-                   for(int j = i + 1; j<total;j++){
-                     if(swpchoix == 1) {
-                        if(capacite[i]>capacite[j]){
-                          tbdil(i,j);
-             }
-            }else if(swpchoix == 2){
-                   
-                if(strcmp(modele[i],modele[j]) > 0){
-                    tbdil(i,j);
-                        }
-}}
+          if(swpchoix == 1){
+             for(int i = 0; i < total ; i++ ){
+                int swap = i;
+                   for(int j = i + 1 ; j < total ; j++){
+
+                       if(capacite[j] < capacite[swap])
+                             swap = j;
+
+                   }
+                          idswap=idAavion[i];
+                          idAavion[i]=idAavion[swap];
+                          idAavion[swap]=idswap;
+
+                          capswap=capacite[i];
+                          capacite[i]=capacite[swap];
+                          capacite[swap]=capswap;
+
+                          strcpy(mdlswap,modele[i]);
+                          strcpy(modele[i], modele[swap]);
+                          strcpy(modele[swap],mdlswap);
+
+                          strcpy(sttswap, statut[i]);
+                          strcpy(statut[i], statut[swap]);
+                          strcpy(statut[swap],sttswap);
+                  }} 
                afficher_davion();
-}
 }
 
 
@@ -186,6 +186,7 @@ do{
                   break;
             default:
                      printf("introuvable dans ce menu\n"); 
+                     
                   break;
 
         }
@@ -193,3 +194,5 @@ do{
           
 }while(choix != 0);
 }
+
+

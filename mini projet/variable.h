@@ -16,11 +16,12 @@ char nvmodele[50];
 int nvcapacite;
 char nvstatut[50];
 //bach nbdlo
+
 int idswap;
 int capswap;
 char mdlswap[50];
 char sttswap[50];
- int swpchoix;
+int swpchoix;
 //other
 int add ;
 bool check = false;
