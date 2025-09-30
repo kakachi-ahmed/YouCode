@@ -8,9 +8,9 @@ void ajouter_davion(){
      scanf("%d",&add);
    for(int i = 0 ; i < add  ; i++){
  printf("enter modele davion : ");
- while (getchar() != '\n');
-fgets(modele[i],50,stdin);
-   
+    while (getchar() != '\n');
+      fgets(modele[i],50,stdin);
+    
     //scanf("%s",modele[total]);
  printf("enter capacite davion : ");
     scanf("%d",&capacite[total]); 
@@ -26,8 +26,9 @@ void afficher_davion(){
 
         for(int i = 0; i<total; i++){
       
-      printf("-idAvion : %d|-modele : %s|-capacite : %d|-statut : %s \n",idAavion[i],modele[i],capacite[i],statut[i]);
-}}
+      printf("-idAvion : %d\n-modele : %s\n-capacite : %d\n-statut : %s \n",idAavion[i],modele[i],capacite[i],statut[i]);
+         printf("---------------------\n");
+   }}
 
 void cherche_davion(){
            check = false;
@@ -35,7 +36,7 @@ void cherche_davion(){
           scanf("%d",&cherche);
        if(cherche == 1){
      printf("avion modele : ");
-     scanf("%s",modelecherche);
+     fgets(modelecherche,50,stdin);
      for(int i = 0; i < total;i++){
         if(strcmp(modele[i] ,modelecherche)== 0){
             printf("-idAvion : %d | modele : %s | capacite : %d | statut : %s \n",idAavion[i],modele[i],capacite[i],statut[i]);
@@ -66,7 +67,7 @@ void supprimer_davion(){
        for(int i = 0; i < total;i++){
           if(idcherche == idAavion[i]){
              for(int j = i ; j<total-1;j++){
-                idAavion[j] = idAavion[j+1];
+                idAavion[j] = idAavion[j];
                 strcpy(modele[j], modele[j+1]);
                 capacite[j] = capacite[j+1];
                 strcpy(statut[j], statut[j+1]);
@@ -82,7 +83,7 @@ void supprimer_davion(){
 }
 void Modifier_davion(){
     check = false;
-     printf("livre id : ");
+     printf("Avion id : ");
       scanf("%d",&idcherche);
        for(int i = 0; i < total;i++){
           if(idcherche == idAavion[i]){
@@ -157,7 +158,7 @@ do{
             printf("3. Supprimer un avion\n");
               printf("4. Afficher la liste des avions.\n");
                 printf("5. Rechercher un avion\n");
-                  printf("6. Trier les avions (\n");
+                  printf("6. Trier les avions \n");
                     printf("0. quitter\n");
         
         printf("entrer votre choix : ");
