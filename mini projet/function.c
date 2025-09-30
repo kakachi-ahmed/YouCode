@@ -120,14 +120,18 @@ void Modifier_davion(){
 void trier_avions(){
        printf("Trier par : \n 1-capacite 2-modele: ");
           scanf("%d", &swpchoix);
-          if(swpchoix == 1){
+        
              for(int i = 0; i < total ; i++ ){
                 int swap = i;
                    for(int j = i + 1 ; j < total ; j++){
+                         if(swpchoix == 1){   
 
-                       if(capacite[j] < capacite[swap])
-                             swap = j;
+                              if(capacite[j] < capacite[swap])
+                                   swap = j;
+                   }else if(swpchoix == 2){
 
+                        if(strcmp(modele[j],modele[swap]) < 0){
+                             swap = j;}
                    }
                           idswap=idAavion[i];
                           idAavion[i]=idAavion[swap];

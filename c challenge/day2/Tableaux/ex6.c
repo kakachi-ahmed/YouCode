@@ -12,7 +12,7 @@ int main(){
            scanf("%d", &num[i]);
 
        } 
-             for(int i =0 ; i < a - 1 ; i++){
+             for(int i =0 ; i < a - 1; i++){
 
                  for(int x = i + 1; x < a ; x++){
                        if(num[i] > num[x]){
