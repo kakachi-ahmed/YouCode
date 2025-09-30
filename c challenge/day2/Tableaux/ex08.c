@@ -14,7 +14,7 @@ int main(){
        } 
              for(int i =0 ; i < a  ; i++){
                    
-                       for(int x = i + 1 ; x < a ; x++){ //123
+                       for(int x = i + 1 ; x < a ; x++){
 
                              result = num[i];
                              num[i] = num[x];

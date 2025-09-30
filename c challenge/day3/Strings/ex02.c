@@ -2,16 +2,14 @@
 #include <string.h>
 
 int main(){
+  int i =0;
+ char nom[100];
+    printf("entrer text : ");
+           fgets(nom,100,stdin);
+    
+    while(nom[i] != '\0' && nom[i] != '\n'){
+      i++;
+    }
 
- char nom[20];
-    printf("entrer ton nom : ");
-    scanf("%s",nom);
-    
-    
-     for (int i = 0; i <nom['\0'] ; i++)
-     {
-        
-        printf("%d",i);
-     }
-     
+     printf("%d\n",i);
 }
